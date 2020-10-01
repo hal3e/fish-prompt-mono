@@ -17,7 +17,7 @@ function fish_prompt
         set color3 "$color_error"
     end
 
-    set -l glyph " $color2\$$color_normal"
+    set -l glyph " $color2>$color_normal"
 
     if test 0 -eq (id -u "$USER")
         echo -sn "$color_error# $color_normal"
@@ -66,7 +66,7 @@ function fish_prompt
 
     if set branch_name (git_branch_name)
         set -l git_color
-        set -l git_glyph \$
+        set -l git_glyph \>
 
         if git_is_staged
             set git_color (set_color green)
